@@ -195,9 +195,28 @@
             color:white
 
         }
+        @media (min-width: 769px) {
+            #mobile-body {
+                display: none
+            }
+
+        }
+        @media only screen and (max-width: 768px) {
+            #desktop-body {
+                display: none
+            }
+
+        }
+
+
     </style>
   </head>
   <body>
+    <div id='mobile-body'>
+        <img src="snipesBackground23-v5.png">
+    </div>
+    <div id='desktop-body'>
+
     
     <div id='map'></div>
     <div  id='toc'>
@@ -205,6 +224,7 @@
         <ol id='tocItems'></ol></div>
     </div>
     <div id='details' class="details"><div id='detailText'></div><div id="myPopupImage"></div></div>
+</div>
     <script>
         var defWidth = 843
         var defHeight = 570

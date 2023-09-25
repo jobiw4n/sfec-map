@@ -275,11 +275,12 @@
                 newWidth = 0.95*windowHeight*newWidth/newHeight
                 //newHeight = 0.95*newWidth*defHeight/defWidth
             }
-            newHeight = 0.95*newWidth*defHeight/defWidth
+            
             
             if(top.location != window.location) {
                 newWidth = top.window[0].innerWidth-20;
             }
+            newHeight = 0.95*newWidth*defHeight/defWidth
             console.log(newWidth)
             console.log(minWidth)
             if(newWidth <= minWidth){
@@ -322,7 +323,7 @@
             detailText.style.width = .75*.5*newWidth-35+'px'
             // detailText.style['padding-right'] = '20px'
             detailText.style.fontSize = resizeRatio*100+'%'
-            document.get
+            
 
             if(swap){
                 toc.style.left = '0px'

@@ -115,7 +115,7 @@
             margin-top:-2px;
             animation-duration: 1s;
             z-index:31000;
-            top:354px;
+            top:0px;
             border-radius:30px
             /* animation-name:fade-in */
             
@@ -247,10 +247,15 @@
 
         function updateSize(newWidth,swap){
             windowHeight = window.innerHeight
-
+            console.log('window then new')
+            console.log(windowHeight)
+            console.log(newHeight)
+            console.log('done')
             if (newHeight>windowHeight){
                 newWidth = 0.95*windowHeight*newWidth/newHeight
+                //newHeight = 0.95*newWidth*defHeight/defWidth
             }
+            newHeight = 0.95*newWidth*defHeight/defWidth
             
             if(top.location != window.location) {
                 newWidth = top.window[0].innerWidth-20;
@@ -286,7 +291,7 @@
             details.style.left = .125*newWidth+'px'
             details.style['min-height'] = defDetailMinHeight*resizeRatio+'px'
             details.style.top = .125*newHeight+'px'
-            details.style.height = .6*newHeight+'px'
+            details.style.height = .75*newHeight+'px'
             console.log('heights')
             console.log(newHeight)
             console.log(details.style.height)
@@ -683,7 +688,12 @@
                 //resizeContent()
                 
             }).then(()=>{
+                console.log('NEW width: '+newWidth)
                 console.log('Widths reset')
+                var updatingMap = document.getElementById('map')
+                var updatingWidth = updatingMap.style.width.substring(0,updatingMap.style.width.length-2)
+                console.log(updatingWidth)
+                newWidth = updatingWidth
                 updateSize(newWidth, swap)
                 
                 

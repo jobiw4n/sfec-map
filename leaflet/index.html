@@ -658,8 +658,8 @@
                         console.log(title.innerHTML)
                         fadeIcons(event.target)
                         event.popup._source.getTooltip().setOpacity(0);
-
-                        var apiUrl = 'https://script.google.com/macros/s/AKfycbzek3Z1iuBYBzWG9aigJBAqJblw8KmC1hjxi2w0mjV8oHzpykJnLix-MXMcUUCqZ3_YQA/exec'+'?title='+title
+                        
+                        var apiUrl = 'https://script.google.com/macros/s/AKfycbzek3Z1iuBYBzWG9aigJBAqJblw8KmC1hjxi2w0mjV8oHzpykJnLix-MXMcUUCqZ3_YQA/exec'+'?title='+title.innerHTML
                         fetch(apiUrl)
                     }).on("popupclose", function(event){
                         var doc = new DOMParser().parseFromString(event.popup.getContent(), "text/html");

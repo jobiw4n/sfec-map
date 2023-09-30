@@ -201,6 +201,18 @@
             }
 
         }
+        @media (min-width: 769px) {
+            #desktop-body {
+                display: block
+            }
+
+        }
+        @media only screen and (max-width: 768px) {
+            #mobile-body {
+                display: block
+            }
+
+        }
         @media only screen and (max-width: 768px) {
             #desktop-body {
                 display: none
@@ -213,7 +225,7 @@
   </head>
   <body>
     <div style="width:700px" id='mobile-body'>
-        <img src="snipesBackground23-v5.png">git
+        <img src="snipesBackground23-v5.png">
     </div>
     <div id='desktop-body'>
 
@@ -226,6 +238,14 @@
     <div id='details' class="details"><div id='detailText'></div><div id="myPopupImage"></div></div>
 </div>
     <script>
+
+        const mediaQuery = window.matchMedia('(max-width: 768px)')
+        // Check if the media query is true
+        if (mediaQuery.matches) {
+        // Then trigger an alert
+            var apiUrl = 'https://script.google.com/macros/s/AKfycbzek3Z1iuBYBzWG9aigJBAqJblw8KmC1hjxi2w0mjV8oHzpykJnLix-MXMcUUCqZ3_YQA/exec'+'?title='+'Mobile Loads:'
+                        fetch(apiUrl)
+        }
         var defWidth = 843
         var defHeight = 570
         var defMinscreenWidth = 843
@@ -659,7 +679,7 @@
                         fadeIcons(event.target)
                         event.popup._source.getTooltip().setOpacity(0);
                         
-                        var apiUrl = 'https://script.google.com/macros/s/AKfycbzek3Z1iuBYBzWG9aigJBAqJblw8KmC1hjxi2w0mjV8oHzpykJnLix-MXMcUUCqZ3_YQA/exec'+'?title='+title.innerHTML
+                        var apiUrl = 'https://script.google.com/macros/s/AKfycbzek3Z1iuBYBzWG9aigJBAqJblw8KmC1hjxi2w0mjV8oHzpykJnLix-MXMcUUCqZ3_YQA/exec'+'?title='+title.innerHTML.trim()
                         fetch(apiUrl)
                     }).on("popupclose", function(event){
                         var doc = new DOMParser().parseFromString(event.popup.getContent(), "text/html");
